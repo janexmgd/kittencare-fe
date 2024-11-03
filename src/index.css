@@ -1,0 +1,12 @@
+/* src/styles.css */
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+body{
+ width: 90%;
+ min-height: 100vh;
+ margin-left:auto;
+ margin-right: auto;
+ margin-top:1vh;
+}
