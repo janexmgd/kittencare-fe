@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Navbar = () => {
   const navigate = useNavigate("");
   const [isOpen, setOpen] = useState(false);
-  const [isLogin, setLogin] = useState(false);
+  const [isLogin, setLogin] = useState(true);
   return (
     <nav className="flex flex-row items-center justify-between h-14 mb-2">
       <div className="flex flex-row items-center">
@@ -24,7 +24,7 @@ const Navbar = () => {
                   <ul className="space-y-1">
                     <li>
                       <a
-                        href="#"
+                        href="/my-profile"
                         className="block w-full px-4 py-2 text-sm font-medium text-gray-500 text-left hover:bg-gray-100 hover:text-gray-700"
                       >
                         Profile
