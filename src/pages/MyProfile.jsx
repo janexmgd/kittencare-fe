@@ -10,7 +10,7 @@ import {
   Camera,
   Cat,
 } from "lucide-react";
-import imgUrl from "../assets/images/alya.jpeg";
+import imgUrl from "../assets/images/Alya.jpeg";
 
 const MyProfile = () => {
   const [isEditing, setIsEditing] = useState(false);
