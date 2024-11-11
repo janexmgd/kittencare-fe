@@ -10,3 +10,22 @@ body{
  margin-right: auto;
  margin-top:1vh;
 }
+@font-face {
+    font-family: 'Lobster';
+    src: url('../src/assets/fonts/Lobster-Regular.ttf') format('truetype'),
+}
+@font-face {
+    font-family: 'Allura';
+    src: url('../src/assets/fonts/Allura-Regular.ttf') format('truetype'),
+}
+.text-banner {
+    font-family: 'Lobster';
+    font-size: x-large;
+    background-color: rgba(255, 255, 255, 0.54);
+    /* back */
+}
+.text-header {
+    font-family: 'Allura';
+    font-size: xx-large;
+    
+}
