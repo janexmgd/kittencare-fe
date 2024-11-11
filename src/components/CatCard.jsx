@@ -1,23 +1,27 @@
 import { useNavigate } from "react-router-dom";
 
-const CatCard = ({ imageUrl, catName, id }) => {
+const CatCard = ({ imageUrl, catName, id, description }) => {
   const navigate = useNavigate();
   const handleClick = () => navigate(`/pet/${id}`);
   return (
     <button
-      className="max-w-xs bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105"
       onClick={handleClick}
+      className="group relative block bg-black text-left"
     >
       <img
+        alt=""
         src={imageUrl}
-        alt={`Picture of ${catName}`}
-        className="w-full h-48 object-cover"
+        className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
       />
-      <div className="p-4">
-        <h2 className="text-left text-xl font-semibold">
-          {catName || "Unknown Cat"}
-        </h2>
-        <h1 className="text-orang-300">adopt now</h1>
+
+      <div className="relative p-4 sm:p-6 lg:p-8">
+        <p className="text-xl font-bold text-white sm:text-2xl ">{catName}</p>
+
+        <div className="mt-32 sm:mt-48 lg:mt-64">
+          <div className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
+            <p className="text-sm text-white">{description}</p>
+          </div>
+        </div>
       </div>
     </button>
   );
