@@ -1,4 +1,8 @@
 import Router from "./Router";
-export default () => {
+import React from "react";
+
+const App = () => {
   return <Router />;
 };
+
+export default App;
