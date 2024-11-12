@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound.jsx";
 import PetDetail from "./components/petDetail.jsx";
-import Myprofile from "./pages/MyProfile.jsx";
+import Profile from "./pages/Profile.jsx";
 
 const Router = () => {
   return (
@@ -10,7 +10,7 @@ const Router = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/pet/:id" element={<PetDetail />} />
-        <Route path="/my-profile" element={<Myprofile />} />
+        <Route path="/my-profile" element={<Profile />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

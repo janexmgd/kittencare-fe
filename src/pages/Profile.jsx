@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import imgUrl from "../assets/images/Alya.jpeg";
 
-const Myprofile = () => {
+const Profile = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [profile, setProfile] = useState({
     name: "Alya kujo",
@@ -235,4 +235,4 @@ const Myprofile = () => {
   );
 };
 
-export default Myprofile;
+export default Profile;
