@@ -1,10 +1,12 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import CatCard from "../components/CatCard";
 import "../assets/styles/Home.css";
 import BeatifullBannerImage from "../assets/images/ludemeula-fernandes-9UUoGaaHtNE-unsplash.jpg";
-import CatCard from "../components/CatCard";
 import imageCat from "../assets/images/esteban-chinchilla-DwkgUqRcHrA-unsplash.jpg";
-import { useNavigate } from "react-router-dom";
-import Footer from "../components/Footer.jsx";
+
 const catList = [
   {
     id: "1",
@@ -64,47 +66,54 @@ const catList = [
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis perferendis hic asperiores quibusdam quidem voluptates doloremque reiciendis nostrum harum. Repudiandae?",
   },
 ];
+
 const Home = () => {
   const navigate = useNavigate();
+
   return (
-    <div className="mb-5">
+    <div className="flex flex-col min-h-screen">
       <Navbar />
-      <div className="flex flex-col justify-center items-center">
-        {/* image banner */}
-        <div className="flex w-4/5 h-80 relative mb-5 mt-10">
-          <img
-            src={BeatifullBannerImage}
-            alt=""
-            srcSet=""
-            className="object-cover h-full w-full hover"
-          />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <p className="text-banner bg-opacity-50 px-5 py-5">
-              Adopt a Cat, Add Happiness to Your Home
-            </p>
+      <main className="flex-grow">
+        <div className="container mx-auto px-4">
+          {/* Banner */}
+          <div className="relative h-80 mb-5 mt-10 overflow-hidden rounded-lg">
+            <img
+              src={BeatifullBannerImage}
+              alt="Beautiful cat banner"
+              className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
+            />
+            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
+              <p className="text-banner text-white text-center px-5 py-5">
+                Adopt a Cat, Add Happiness to Your Home
+              </p>
+            </div>
           </div>
+
+          {/* Pet List */}
+          <section className="w-full mt-20">
+            <h1 className="text-3xl font-extrabold">Pet List</h1>
+            <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 p-5 mt-10">
+              {catList.map((cat) => (
+                <CatCard
+                  key={cat.id}
+                  id={cat.id}
+                  imageUrl={cat.imgUrl}
+                  catName={cat.catName}
+                  description={cat.description}
+                />
+              ))}
+            </div>
+            <div className="w-full flex items-end justify-end">
+              <button
+                onClick={() => navigate("/pet")}
+                className="text-blue-600 hover:text-blue-800"
+              >
+                <p className="underline">See more</p>
+              </button>
+            </div>
+          </section>
         </div>
-        {/* pet card */}
-        <div className="w-full mt-20">
-          <h1 className="text-3xl font-extrabold">Pet List</h1>
-          <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-5 p-5 mt-10">
-            {catList.map((e) => (
-              <CatCard
-                id={e.id}
-                imageUrl={e.imgUrl}
-                catName={e.catName}
-                key={e.id}
-                description={e.description}
-              />
-            ))}
-          </div>
-          <div className="w-full flex items-end justify-end">
-            <button onClick={() => navigate("/pet")}>
-              <p className="underline">See more</p>
-            </button>
-          </div>
-        </div>
-      </div>
+      </main>
       <Footer />
     </div>
   );
