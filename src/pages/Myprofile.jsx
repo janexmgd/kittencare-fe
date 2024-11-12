@@ -1,4 +1,4 @@
-import { useState, useRef, ChangeEvent, FormEvent } from "react";
+import { useState, useRef } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import {
@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import imgUrl from "../assets/images/Alya.jpeg";
 
-const MyProfile = () => {
+const Myprofile = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [profile, setProfile] = useState({
     name: "Alya kujo",
@@ -235,4 +235,4 @@ const MyProfile = () => {
   );
 };
 
-export default MyProfile;
+export default Myprofile;

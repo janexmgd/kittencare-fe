@@ -2,17 +2,19 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound.jsx";
 import PetDetail from "./components/petDetail.jsx";
-import MyProfile from "./pages/MyProfile.jsx";
+import Myprofile from "./pages/MyProfile.jsx";
 
-export default () => {
+const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/pet/:id" element={<PetDetail />} />
-        <Route path="/my-profile" element={<MyProfile />} />
+        <Route path="/my-profile" element={<Myprofile />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
 };
+
+export default Router;
